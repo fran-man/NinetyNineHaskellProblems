@@ -1,3 +1,6 @@
+runLengthCompression :: Eq a => [a] -> [(Int, a)]
+runLengthCompression l = map (\x -> (length x, head x)) $ packConsecutive l
+
 packConsecutive :: Eq a => [a] -> [[a]]
 packConsecutive [] = []
 packConsecutive [x] = [[x]]
