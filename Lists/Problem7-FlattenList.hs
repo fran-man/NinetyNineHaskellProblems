@@ -6,5 +6,4 @@ flattenMyNestedList (Elem a) = [a]
 flattenMyNestedList (List l) = flattenMyNestedList (head l) ++ myFlatten (map flattenMyNestedList (tail l))
 
 myFlatten :: [[a]] -> [a]
-myFlatten [] = []
-myFlatten (x:xs) = x ++ myFlatten xs
+myFlatten = foldr (++) []
